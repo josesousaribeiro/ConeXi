@@ -70,3 +70,26 @@ f3                  25.0
 f2                  24.0
 f5                  18.0
 ```
+
+# Cite this work
+
+You can cite the package using the following bibtex entry:
+```
+@misc{https://doi.org/10.48550/arxiv.2210.10849,
+  doi = {10.48550/ARXIV.2210.10849},
+  
+  url = {https://arxiv.org/abs/2210.10849},
+  
+  author = {Ribeiro, José and Carneiro, Níkolas and Alves, Ronnie},
+  
+  keywords = {Machine Learning (cs.LG), Artificial Intelligence (cs.AI), FOS: Computer and information sciences, FOS: Computer and information sciences, I.2.6},
+  
+  title = {Black Box Model Explanations and the Human Interpretability Expectations -- An Analysis in the Context of Homicide Prediction},
+  
+  publisher = {arXiv},
+  
+  year = {2022},
+  
+  copyright = {Creative Commons Attribution 4.0 International}
+}
+```
