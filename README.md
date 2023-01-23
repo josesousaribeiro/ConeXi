@@ -30,6 +30,21 @@ from combineranks import ConeXi
 
 # Simple execution
 
+In this example, 3 different ranks (rank1, rank2 and rank3) containing 5 elements (attributes) each will be combined into a single final rank.
+
+This is the initial dataframe needed for execution:
+
+```
+  att_original_names rank1 rank2 rank3
+0                 f1    f3    f4    f1
+1                 f2    f4    f1    f2
+2                 f3    f1    f2    f3
+3                 f4    f2    f3    f4
+4                 f5    f5    f5    f5
+```
+
+This is the python code:
+
 ```python
 #Simple example of utilization of ConeXi
 d = {'att_original_names': ['f1', 'f2','f3','f4','f5'], 
