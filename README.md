@@ -8,7 +8,7 @@ Ronnie Alves (Leader) - site: https://sites.google.com/site/alvesrco
 
 # ConeXi
 
-This is a library developed during the article *"Black Box Model Explanations and the Human Interpretability Expectations - An Analysis in the Context of Homicide Prediction"*, by José Ribeiro, Nikolas Carneiro and Ronnie alves.
+This is a library developed during the article **"Black Box Model Explanations and the Human Interpretability Expectations - An Analysis in the Context of Homicide Prediction"**, by José Ribeiro, Nikolas Carneiro and Ronnie alves.
 
 The main function of this library is to perform the combination of ranks, with or without loss of elements, in a final rank that represents the ideal combination of all ranks passed as input.
 
