@@ -17,14 +17,16 @@ In a practical way, this library can be used to combine the output of several Ex
 The possibility of using this library is varied, not limited to the XAI area.
 
 # Intallation
+
 ```python
 pip install ConeXi
-´´´
+```
 
 # Import
+
 ```python
 from combineranks import ConeXi
-´´´
+```
 
 # Simple execution
 
@@ -41,4 +43,4 @@ c = ConeXi(5)
 rank_final, data = c.ExecuteConeXi(df)
     
 print(rank_final)
-´´´´
+```
