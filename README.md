@@ -25,7 +25,7 @@ pip install ConeXi
 # Import
 
 ```python
-from combineranks import ConeXi
+from combineranks import ConeXi as combine
 ```
 
 # Simple execution
@@ -53,7 +53,7 @@ d = {'att_original_names': ['f1', 'f2','f3','f4','f5'],
     'rank3':['f1','f2','f3','f4','f5']}
 df = pd.DataFrame(data=d)
     
-c = ConeXi.ConeXi(5)
+c = combine.ConeXi(5)
     
 rank_final, data = c.ExecuteConeXi(df)
     
