@@ -47,28 +47,27 @@ This is the python code:
 
 ```python
 #Simple example of utilization of ConeXi
-d = {'att_original_names': ['f1', 'f2','f3','f4','f5'], 
-    'rank1': ['f3', 'f4','f1','f2','f5'],
-    'rank2': ['f4','f1','f2','f3','f5'],
-    'rank3':['f1','f2','f3','f4','f5']}
+d = {'att_original_names': ['A', 'B','C','D'],
+    'weights': [ 1 , 1 , 1 , 1],
+    'rank1': ['A', 'B','C','D'],
+    'rank2': ['A','C','B','D'],
+    'rank3':['A','B','C','D']}
 df = pd.DataFrame(data=d)
     
-c = combine.ConeXi(5)
+c = combine.ConeXi(4)
     
 rank_final, data = c.ExecuteConeXi(df)
     
 print(rank_final)
 ```
-
 This is the output of execution:
 
 ```python
-att_original_names      
-f1                  27.0
-f4                  26.0
-f3                  25.0
-f2                  24.0
-f5                  18.0
+att_original_names    S    
+A                   12.0
+B                    8.0
+C                    7.0
+D                    3.0
 ```
 
 # Cite this work
