@@ -35,11 +35,11 @@ In this example, 3 different ranks (rank1, rank2 and rank3) containing 5 element
 This is the initial dataframe needed for execution:
 
 ```
-  att_original_names rank1 rank2 rank3
-0                 A    A    A    A
-1                 B    B    C    B
-2                 C    C    B    C
-3                 D    D    D    D
+rank1 rank2 rank3
+A    A    A
+B    C    B
+C    B    C
+D    D    D
 ```
 
 This is the python code:
