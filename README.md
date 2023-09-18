@@ -36,11 +36,10 @@ This is the initial dataframe needed for execution:
 
 ```
   att_original_names rank1 rank2 rank3
-0                 f1    f3    f4    f1
-1                 f2    f4    f1    f2
-2                 f3    f1    f2    f3
-3                 f4    f2    f3    f4
-4                 f5    f5    f5    f5
+0                 A    A    A    A
+1                 B    B    C    B
+2                 C    C    B    C
+3                 D    D    D    D
 ```
 
 This is the python code:
