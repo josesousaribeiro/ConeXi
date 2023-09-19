@@ -18,19 +18,20 @@ class ConeXi():
     def ExecuteConeXi(self, df_features_rank):
         df_features_rank_copy = df_features_rank.copy()
         df_features_rank_step1 = df_features_rank.copy()
-        features = df_features_rank_copy['att_original_names'] #column names of experts/measures
-        features_w = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] #weights for each expert/measure.
+        features = list(df_features_rank_copy['att_original_names']) #column names of experts/measures
+        features_w = list(df_features_rank_copy['weights']) #weights for each expert/measure.
         col = list(df_features_rank_copy.columns)
         col.remove('att_original_names')
+        col.remove('weights')
         
         for idl,l in enumerate(features):
           for idc,c in enumerate(col):
             for idp,p in enumerate(df_features_rank_copy.loc[:,c]):
               if l == p:
-                if idp >= self.top_n_rank:
-                  df_features_rank_step1.loc[idl,c] = 0
-                else:
+                if idp < self.top_n_rank:
                   df_features_rank_step1.loc[idl,c] = idp+1
+                else:
+                  df_features_rank_step1.loc[idl,c] = 0
         
         
         df_step_1 = df_features_rank_step1.copy()
@@ -45,12 +46,13 @@ class ConeXi():
         df = pd.DataFrame(data, index=df_features_rank_step1.index)
         
         for idl,l in enumerate(features):
-          s_line = 0
-          for idc,c in enumerate(col):
-            for i in range(1,11):
-              if df_features_rank_step1.loc[l,c] <= i and df_features_rank_step1.loc[l,c] !=0 :
-                s_line = (s_line + 1) * features_w[idc]
-            df.loc[l,'S'] = s_line
+          #if idl < self.top_n_rank:
+              s_line = 0
+              for idc,c in enumerate(col):
+                for i in range(self.top_n_rank):
+                  if df_features_rank_step1.loc[l,c] <= i+1 and df_features_rank_step1.loc[l,c] != 0:
+                    s_line += 1 
+              df.loc[l,'S'] = s_line * features_w[idl]
         
         df_final = df.sort_values('S',ascending=False)
         return df_final, df_step_1
@@ -59,17 +61,24 @@ def main():
     
     #Simple example of utilization of ConeXi
     
-    d = {'att_original_names': ['f1', 'f2','f3','f4','f5'], 
-         'rank1': ['f3', 'f4','f1','f2','f5'],
-         'rank2': ['f4','f1','f2','f3','f5'],
-         'rank3':['f1','f2','f3','f4','f5']}
-    df = pd.DataFrame(data=d)
-
+    d = {'att_original_names':  ['A', 'B','C','D','E','F','G'], 
+                    'weights':  [ 1 , 1 , 1 , 1  , 1 , 1 , 1 ],
+                     'Rank_1':  ['A', 'B','C','D','E','F','G'], 
+                     'Rank_2':  ['A', 'B','D','C','G','E','F'],
+                     'Rank_3':  ['A', 'C','B','F','D','E','G' ]}
     
-    c = ConeXi(5)
+    
+    df = pd.DataFrame(data=d)
+    df.reset_index()
+    
+    c = ConeXi(4)
     
     rank_final, data = c.ExecuteConeXi(df)
     
+    print("Intermediate table:")
+    print(data)
+    print()
+    print("Final rank:")
     print(rank_final)
     
 if __name__ == "__main__":
