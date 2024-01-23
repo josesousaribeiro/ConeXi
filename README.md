@@ -18,13 +18,13 @@ The possibility of using this library is varied, not limited to the XAI area.
 
 # Intallation
 
-```python
+```Nushell
 pip install ConeXi
 ```
 
 # Import
 
-```python
+```Python
 from combineranks import ConeXi as combine
 ```
 
@@ -44,7 +44,7 @@ D    D    D
 
 This is the python code:
 
-```python
+```Python
 #Simple example of utilization of ConeXi
 d = {'att_original_names': ['A', 'B','C','D'],
     'weights': [ 1 , 1 , 1 , 1],
@@ -61,7 +61,7 @@ print(rank_final)
 ```
 This is the output of execution:
 
-```python
+```Python
 att_original_names    S    
 A                   12.0
 B                    8.0
@@ -72,7 +72,7 @@ D                    3.0
 # Cite this work
 
 You can cite the package using the following bibtex entry:
-```
+```TeX
 @misc{https://doi.org/10.48550/arxiv.2210.10849,
   doi = {10.48550/ARXIV.2210.10849},
   url = {https://arxiv.org/abs/2210.10849},
